@@ -1,11 +1,12 @@
-name: python
-version: 0.0.11
+name: python-nodejs
+version: 0.0.1
 inherits: wercker/ubuntu12.04-webessentials@0.0.12
 type : main
 platform : ubuntu@12.04
-description : python
+description : python box with updated nodejs
 keywords:
   - python
+  - nodejs
   - virtualenv
   - python 2.7
   - python 3.2
@@ -34,6 +35,20 @@ script : |
   sudo pip-2.7 install virtualenv wheel
 
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
+
+  export NODEVERSION=0.10.24
+  cd $HOME
+  mkdir nodeinstall
+  cd nodeinstall
+  wget http://nodejs.org/dist/v$NODEVERSION/node-v$NODEVERSION.tar.gz
+  tar xzvf node-v$NODEVERSION.tar.gz
+  cd node-v$NODEVERSION
+  ./configure
+  make
+  sudo make install
+  cd $HOME
+  rm -fr nodeinstall
+  node -v
 
 box-detect:
   priority : 900
