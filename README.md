@@ -32,7 +32,7 @@ The following is the default [wercker.yml](http://devcenter.wercker.com/articles
 
 ```yaml
 
-box: wercker/python
+box: vmaatta/python-nodejs
 services:
     # - wercker/postgresql # Don't forget to add your databases as a service
 
@@ -94,6 +94,15 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 0.0.2
+- removed extraneous pip package install
+- documentation updates
+
+## 0.0.1
+- Initial python-nodejs fork
+
+### End canonical fork log
 ## 0.0.11
 - force pip for python 2.7 to be deafult
 
