@@ -4,6 +4,10 @@ A [wercker box](http://devcenter.wercker.com/articles/boxes/) with python 2.7
 and 3.2 installed. For both versions of python setuptools, wheel, pip and
 virtualenv are installed.
 
+Includes an updated NodeJS w/ npm, version 0.10.24 as of 15.01.2013.
+
+If you don't need NodeJS or npm you should instead checkout the [canonical python box](https://github.com/wercker/box-python.git).
+
 There are two steps by default added to the wercker.yml:
 
 - `virtualenv` which sets up a python
@@ -64,10 +68,7 @@ see our [devcenter](http://devcenter.wercker.com). We also have guides:
 
 # What's new
 
-- Python 3.2 added
-- pip updated to 1.4.1
-- setuptools updated
-- wheels installed
+- Updated NodeJS, version 0.10.24
 
 # License
 
