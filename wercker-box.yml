@@ -39,7 +39,7 @@ script : |
 
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
-  export NODEVERSION=0.10.24
+  export NODEVERSION=0.10.26
   cd $HOME
   mkdir nodeinstall
   cd nodeinstall
