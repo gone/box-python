@@ -97,6 +97,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
 
+## 0.0.5
+- merge upstream changes
+
+## 0.0.4
+- Update Node to v0.10.26
+
+## 0.0.3
+- Ruby and Bundler.
+
 ## 0.0.2
 - removed extraneous pip package install
 - documentation updates
