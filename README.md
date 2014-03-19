@@ -68,6 +68,7 @@ see our [devcenter](http://devcenter.wercker.com). We also have guides:
 
 # What's new
 
+- Changed `ubuntu12.04-webessentials` to version `1.0.0`
 - Updated NodeJS, version 0.10.26
 - -Updated NodeJS, version 0.10.24-
 
@@ -104,13 +105,28 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 - Initial python-nodejs fork
 
 ### End canonical fork log
+## 1.0.1
+- newer version of virtualenv installed 1.11.4
+
+## 1.0.0
+- version increased to 1.0.0 to reflect stable status
+- pip (outside of virtualenv) is now also the latest version
+- wheel is now disabled in the default yaml for this box.
+
+## 0.0.12
+
+- Changed `ubuntu12.04-webessentials` to version `1.0.0`
+
 ## 0.0.11
+
 - force pip for python 2.7 to be deafult
 
 ## 0.0.10
+
 - switch for default pip (python 2.7 one or 3.2)
 
 ## 0.0.9
+
 - Python 3.2 added by default
 - pip updated to 1.4.1
 - setuptools updated to latest version 1.3.1

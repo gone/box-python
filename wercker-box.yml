@@ -1,5 +1,5 @@
 name: python-nodejs
-version: 0.0.4
+version: 0.0.5
 inherits: wercker/ubuntu12.04-webessentials@0.0.12
 type : main
 platform : ubuntu@12.04
@@ -18,6 +18,9 @@ packages :
   - python@2.7.3
   - python@3.2.3
   - setuptools@1.3
+  - pip@1.5.4
+  - virtualenv@1.11.4
+  - wheel@0.22.0
   - psycopg2
   - ruby@2.0.0-p353
 script : |
@@ -28,14 +31,25 @@ script : |
   sudo python3 ez_setup.py
   sudo python2 ez_setup.py
 
+  cd /tmp/
   wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py
   sudo python get-pip.py
-  sudo python3 get-pip.py
+  pip --version
+  sudo cp /usr/local/bin/pip /usr/local/bin/pip-2.7
   sudo rm -rf /usr/local/bin/pip
-  sudo cp /usr/local/bin/pip2.7 /usr/local/bin/pip
+  sudo python3 get-pip.py
+  sudo cp /usr/local/bin/pip /usr/local/bin/pip-3.2
+  sudo cp /usr/local/bin/pip-2.7 /usr/local/bin/pip
+  pip --version
 
-  sudo pip3.2 install virtualenv wheel
-  sudo pip2.7 install virtualenv wheel
+  sudo pip-3.2 install virtualenv wheel --upgrade
+  sudo pip-2.7 install virtualenv wheel --upgrade
+
+  sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
+
+  pip-3.2 --version
+  pip-2.7 --version
+  pip --version
 
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
@@ -95,6 +109,7 @@ default-build:
           # A step that sets up the python virtual environment
           - virtualenv:
               name: setup virtual environment
+              install_wheel: false # Enable wheel to speed up builds (experimental)
 
           # # Use this virtualenv step for python 3.2
           # - virtualenv
