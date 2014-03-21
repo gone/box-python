@@ -7,6 +7,5 @@ cookbook 'wercker-essential', github: "wercker/wercker-essential-cookbook", ref:
 
 
 cookbook 'apt'
-cookbook 'python'
 cookbook 'mysql'
 cookbook 'postgresql'
