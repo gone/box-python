@@ -6,7 +6,7 @@ cookbook 'wercker-aptkey', git: 'https://github.com/wercker/wercker-aptkey-cookb
 cookbook 'wercker-essential', github: "wercker/wercker-essential-cookbook", ref: "0.0.5"
 
 
-cookbook 'apt',
+cookbook 'apt'
 cookbook 'python'
 cookbook 'mysql'
 cookbook 'postgresql'
