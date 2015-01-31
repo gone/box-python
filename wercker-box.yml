@@ -53,8 +53,8 @@ script : |
   echo "RAILS_ENV=test" | sudo tee -a /etc/environment
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
   sudo mv /usr/local/bin/rake /usr/local/bin/rake.back
-  yes |sudo gem install --force chef
-
+  yes |sudo gem install chef --no-rdoc --no-ri
+  sudo gem install berkshelf -v '3.2.3' --no-rdoc --no-ri
 
 
   cd /tmp/
@@ -71,6 +71,7 @@ script : |
   sudo pip-3.2 install virtualenv wheel --upgrade
   sudo pip-2.7 install virtualenv wheel --upgrade
 
+  berks vendor
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
   pip-3.2 --version
