@@ -52,7 +52,8 @@ script : |
   sudo gem install bundler -v "1.3"
   echo "RAILS_ENV=test" | sudo tee -a /etc/environment
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
-  yes |sudo gem install chef
+  sudo mv /usr/local/bin/rake /usr/local/bin/rake.back
+  yes |sudo gem install --force chef
 
 
 
