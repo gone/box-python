@@ -71,7 +71,7 @@ script : |
   sudo pip-3.2 install virtualenv wheel --upgrade
   sudo pip-2.7 install virtualenv wheel --upgrade
 
-  berks vendor
+  berks vendor $WERCKER_SOURCE_DIR
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
   pip-3.2 --version
