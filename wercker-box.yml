@@ -44,7 +44,7 @@ script : |
 
   sudo pip-3.2 install virtualenv wheel --upgrade
   sudo pip-2.7 install virtualenv wheel --upgrade
-
+  sudo gem install chef
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
   pip-3.2 --version
@@ -68,25 +68,6 @@ script : |
   node -v
   sudo npm install -g ember-cli phantom phatomjs testem
 
-  export RUBYVERSION=2.0.0-p353
-  sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev
-  sudo apt-get remove ruby1.9.1
-  cd $HOME
-  mkdir rubyinstall
-  cd rubyinstall
-  wget ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-$RUBYVERSION.tar.gz
-  tar xzvf ruby-$RUBYVERSION.tar.gz
-  cd ruby-$RUBYVERSION
-  ./configure --with-readline-dir=/usr/include/readline --with-openssl-dir=/usr/include/openssl
-  make
-  make test
-  sudo make install
-  cd $HOME
-  rm -fr rubyinstall
-  echo "gem: --no-rdoc --no-ri" >> $HOME/.gemrc
-  sudo gem install bundler -v "1.3"
-  echo "RAILS_ENV=test" | sudo tee -a /etc/environment
-  echo "RACK_ENV=test" | sudo tee -a /etc/environment
 
 box-detect:
   priority : 900
