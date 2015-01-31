@@ -55,7 +55,8 @@ script : |
   sudo mv /usr/local/bin/rake /usr/local/bin/rake.back
   wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.6-1_amd64.deb
   sudo dpkg -i chefdk_0.3.6-1_amd64.deb
-  berks vendor $WERCKER_SOURCE_DIR
+  cd $WERCKER_ROOT
+  berks vendor
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
 
