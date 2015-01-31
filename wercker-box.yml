@@ -66,6 +66,7 @@ script : |
   cd $HOME
   rm -fr nodeinstall
   node -v
+  sudo npm install -g ember-cli phantom phatomjs testem
 
   export RUBYVERSION=2.0.0-p353
   sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev
@@ -130,4 +131,3 @@ default-build:
               code: |
                 echo "python version $(python --version) running"
                 echo "pip version $(pip --version) running"
-
