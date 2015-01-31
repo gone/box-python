@@ -7,7 +7,6 @@
     "recipe[wercker-go-cookbook]",
     "recipe[wercker-aptkey-cookbook::default]",
     "recipe[wercker-django-cookbook::default]",
-    "recipe[mysql::client]",
     "recipe[postgresql::client]"
   ]
 }

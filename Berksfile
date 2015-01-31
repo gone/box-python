@@ -7,5 +7,4 @@ cookbook 'wercker-go-cookbook', github: "wercker/wercker-essential-cookbook", re
 
 
 cookbook 'apt'
-cookbook 'mysql'
 cookbook 'postgresql'
