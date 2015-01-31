@@ -94,7 +94,7 @@ script : |
   cd $HOME
   rm -fr nodeinstall
   node -v
-  sudo npm install -g ember-cli phantom testem bower
+  sudo npm install -g ember-cli phantom testem bower phantomjs
 
 
 box-detect:
