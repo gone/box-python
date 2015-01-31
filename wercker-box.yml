@@ -53,8 +53,8 @@ script : |
   echo "RAILS_ENV=test" | sudo tee -a /etc/environment
   echo "RACK_ENV=test" | sudo tee -a /etc/environment
   sudo mv /usr/local/bin/rake /usr/local/bin/rake.back
-  yes |sudo gem install chef --no-rdoc --no-ri
-  sudo gem install berkshelf -v '3.2.3' --no-rdoc --no-ri
+  wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.6-1_amd64.deb
+  sudo dpkg -i chefdk_0.3.6-1_amd64.deb
 
 
   cd /tmp/
