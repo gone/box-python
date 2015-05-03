@@ -35,7 +35,8 @@ script : |
 
 
   export RUBYVERSION=2.2.1
-  sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev libffi-dev libssl-dev
+  sudo apt-get install git-core
+  sudo apt-get install git zlib1g-dev libreadline-dev libqtwebkit-dev libffi-dev libssl-dev  openssl
   sudo apt-get remove ruby1.9.1
   cd $HOME
   mkdir rubyinstall
